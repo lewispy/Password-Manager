@@ -13,8 +13,8 @@ password_file = "my_passwords.json"
 
 
 # Password function
-def password_gen(n: int, num: int, symbol: int):
-	assert 8 <= n <= 15, f"Error! Password must be from 8 to 15 characters."
+def password_gen(pass_length: int, num: int, symbol: int):
+	assert 8 <= pass_length <= 15, f"Error! Password must be from 8 to 15 characters."
 	assert 1 <= num <= 4, f"Error! From 1 to 4 digits recommended."
 	assert 1 <= symbol <= 2, f"Error! Not more than two symbols recommended."
 
@@ -25,7 +25,7 @@ def password_gen(n: int, num: int, symbol: int):
 	symbols = "!@#$%^&*-_+=<>?/()"
 
 	# Compute length of password alphabets
-	alpha_len = n - (num + symbol)
+	alpha_len = pass_length - (num + symbol)
 	upper_len = randint(1, alpha_len - 1)
 	lower_len = alpha_len - upper_len
 
@@ -92,8 +92,12 @@ def check_file(data, entry):
 def manage_data(new_entry):
 	ask = messagebox.askokcancel(
 		title=f"{website_entry}",
-		message=f"You have entered\nWebsite: {website_entry.get()}\nUsername: {username_entry.get()}"
-				f"\n Press 'Okay' to continue or 'Cancel' to cancel"
+		message=(
+			f"You have entered\n"
+			f"Website: {website_entry.get()}\n"
+			f"Username: {username_entry.get()}\n"
+			f"Press 'Okay' to continue or 'Cancel' to cancel"
+		)
 	)
 	if ask:
 		if os.path.isfile(password_file):  # Check if file exists
@@ -192,7 +196,7 @@ logo = PhotoImage(file="password icon.png")
 
 # A canvas to hold image in first row
 canvas = Canvas(
-	width=360, height=242,
+	width=375, height=242,
 	highlightthickness=0,
 	bg=BG_COLOR
 )
