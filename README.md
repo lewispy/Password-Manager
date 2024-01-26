@@ -1,3 +1,9 @@
+<p align="center">
+  <img width="494" alt="image" src="https://github.com/lewispy/Password-Manager/assets/51890937/b0333095-251d-4331-bef8-77ebc6ed2572">
+</p>
+
+
+##
 # Password Manager
 
 Thinking of secure passwords can be a hassle.
@@ -40,3 +46,5 @@ Key features include:
   - The app features visual elements, including a logo displayed in the GUI, enhancing its aesthetic appeal and providing a recognizable identity.
 
 These key features collectively contribute to a robust and user-friendly password manager app, simplifying the process of creating, storing, and retrieving secure passwords for various online accounts.
+
+
